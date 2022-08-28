@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '04_topics';
+  name = "Vishwas";
+  message = ""
 }

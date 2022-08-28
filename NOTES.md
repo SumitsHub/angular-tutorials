@@ -66,3 +66,12 @@ Example:
 <div *ngFor="let color of colors; index as i; first as f; last as l; odd as o; even as e">
     <h3>{{i}}: {{color}} {{f}} {{l}} {{o}} {{e}}</h3>
 </div>
+
+
+# Component Interaction
+Component interaction is 2 way in angular.
+@Input() and @Output() decorators are used.
+Events are used to send data from child to parent.
+
+# Pipes
+Helps to format data in view without modifying original data.
