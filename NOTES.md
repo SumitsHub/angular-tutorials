@@ -75,3 +75,25 @@ Events are used to send data from child to parent.
 
 # Pipes
 Helps to format data in view without modifying original data.
+
+# Services
+A class with a specific purpose.
+1. Share data
+2. Implement application logic
+3. External interaction, such as DB connection
+Naming convention - .service.ts
+Ex. employee.service.ts
+
+# Dependency Injection (DI)
+DI as a design pattern - DI is a coding pattern in which a class receives its depedencies from external sources rather than creating them itself.
+DI as framework -
+1. Define the EmplyeeService class
+2. Register with Injector - register in app.module providers metadata, so that servce can be used by every child components
+3. Declare as dependency in EmpList and EmpDetails
+
+# Generate service using angular cli
+ng g s employee
+
+# @Injectable() decorator
+@Injectable() decorator in service class indicates that, service might have dependency.
+for component, @Component() decorator does the job.
