@@ -105,3 +105,7 @@ getEmplyees(): Observable<IEmployee[]> {
 }
 2. extracting data by subscribing to method
 this._employeeService.getEmplyees().subscribe(data => this.employees = data);
+
+# new angular project with routing option
+ng new project-name --routing
+
