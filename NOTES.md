@@ -97,3 +97,11 @@ ng g s employee
 # @Injectable() decorator
 @Injectable() decorator in service class indicates that, service might have dependency.
 for component, @Component() decorator does the job.
+
+# Fetching data using HTTP
+1. fetching data using get method and returning an observable
+getEmplyees(): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this._url);
+}
+2. extracting data by subscribing to method
+this._employeeService.getEmplyees().subscribe(data => this.employees = data);
