@@ -109,3 +109,11 @@ this._employeeService.getEmplyees().subscribe(data => this.employees = data);
 # new angular project with routing option
 ng new project-name --routing
 
+# Not found page | Wild card route
+Should always be the last in routes as Routes matched from top to bottom.
+{path: "**", component: NotFoundPageComponent}
+
+# Optional route parameters
+pass an object of optional paramters as key value pairs as second paramter to navigate method
+this.router.navigate(['/departments', {id: selectedId}]);
+
