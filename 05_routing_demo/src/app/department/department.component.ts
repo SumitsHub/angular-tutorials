@@ -5,8 +5,16 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   selector: 'app-department',
   template: `
     <h3>Selected department with id = {{deptId}}</h3>
-    <a (click)="goPrevious()" class="btn">Prev</a>
-    <a (click)="goNext()" class="btn">Next</a>
+
+    <p>
+      <button (click)="showOverview()">Overwiew</button>
+      <button (click)="showContact()">Contact</button>
+    </p>
+    <router-outlet></router-outlet>
+
+
+    <button (click)="goPrevious()" class="btn">Prev</button>
+    <button (click)="goNext()" class="btn">Next</button>
 
     <div>
       <button (click)="gotoDepartment()">Back</button>
@@ -47,17 +55,27 @@ export class DepartmentComponent implements OnInit {
   }
   goPrevious() {
     let prevId = this.deptId - 1;
-    this.router.navigate(['/departments', prevId]);
+    // this.router.navigate(['/departments', prevId]);
+    this.router.navigate(['../', prevId], {relativeTo: this.route})
   }
 
   goNext() {
     let nextId = this.deptId + 1;
-    this.router.navigate(['/departments', nextId]);
+    // this.router.navigate(['/departments', nextId]);
+    this.router.navigate(['../', nextId], {relativeTo: this.route});
   }
 
   gotoDepartment() {
     let selectedId = this.deptId ? this.deptId : null;
     // this.router.navigate(['/departments', {id: selectedId}]);
     this.router.navigate(['../', {id: selectedId}], {relativeTo: this.route})
+  }
+
+  showOverview() {
+    this.router.navigate(['overview'], {relativeTo: this.route})
+  }
+
+  showContact() {
+    this.router.navigate(['contact'], {relativeTo: this.route})
   }
 }

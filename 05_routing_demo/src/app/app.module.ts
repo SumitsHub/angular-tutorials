@@ -5,13 +5,17 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { DepartmentComponent } from './department/department.component';
+import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
+import { DepartmentContactComponent } from './department-contact/department-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     NotFoundPageComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    DepartmentOverviewComponent,
+    DepartmentContactComponent
   ],
   imports: [
     BrowserModule,
