@@ -6,6 +6,13 @@ ng new my-app
 
 # Generate new component using
 ng g c test
+g for generate
+c for component
+
+# Generate new component with inline template and styling
+ng g c component-name -t -s
+-t for inline template
+-s for inline style
 
 # Types of selectors
 1. dynamic component ex: <app-test></app-test>
@@ -117,3 +124,14 @@ Should always be the last in routes as Routes matched from top to bottom.
 pass an object of optional paramters as key value pairs as second paramter to navigate method
 this.router.navigate(['/departments', {id: selectedId}]);
 
+# Child routes
+ {
+    path: 'department-list/:id', 
+    component: DepartmentComponent,
+    children: [
+      {path: '', redirectTo: 'overview', pathMatch: 'full'},
+      {path: 'overview', component: DepartmentOverviewComponent},
+      {path: 'contact', component: DepartmentContactComponent},
+      {path: '**', component: NotFoundPageComponent}
+    ]
+  },
