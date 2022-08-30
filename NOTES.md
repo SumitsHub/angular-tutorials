@@ -100,6 +100,7 @@ Example:
 Component interaction is 2 way in angular.
 @Input() and @Output() decorators are used.
 Events are used to send data from child to parent.
+From parent to child, data is passed through props.
 
 # Pipes
 Helps to format data in view without modifying original data.
