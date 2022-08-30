@@ -15,9 +15,30 @@ ng g c component-name -t -s
 -s for inline style
 
 # Types of selectors
-1. dynamic component ex: <app-test></app-test>
-2. classname ex: <div class="app-test"></div>
-3. attribute ex: <div app-test><div>
+1. dynamic component 
+ex: 
+@Component({
+  selector: 'app-test',
+  templateUrl: './test.component.html',
+  styleUrls: ['./test.component.scss']
+})
+<app-test></app-test>
+2. classname 
+ex: 
+@Component({
+  selector: '.app-test2',
+  templateUrl: './test2.component.html',
+  styleUrls: ['./test2.component.scss']
+})
+<div class="app-test"></div>
+3. attribute 
+ex: 
+@Component({
+  selector: '[app-test3]',
+  templateUrl: './test3.component.html',
+  styleUrls: ['./test3.component.scss']
+})
+<div app-test><div>
 
 # Use of template and styles
 Use template instead of templateUrl and styles instead of styleUrls to use html and css inside ts file. Use backtick if need to use multiple lines.
