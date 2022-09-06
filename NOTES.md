@@ -61,6 +61,7 @@ Hepls to achive two way data binding
 Example: <input [(ngModule)]="name" type="text" />, where name is the variable defined inside respective class component
 
 # Structural Directives
+Template reference variables - starts with # and can be used to access particular template
 1. ngIf
 Example #01:
 <h2 *ngIf="displayName; else elseBlock">
@@ -157,3 +158,33 @@ this.router.navigate(['/departments', {id: selectedId}]);
       {path: '**', component: NotFoundPageComponent}
     ]
   },
+
+# Angular Forms
+1. Template Driven Forms (TDF)
+Most of the code and logic resides in html template. Two way data binding with ngModel. Suitable for simple scenarios.
+Directives used for data binding in TDF: 
+  1. ngForm
+  2. ngModel
+  3. ngModelGroup
+## Binding data to Model
+Generate class using command
+ng generate class ModelName
+ex. ng generate class User
+
+## ngModel properties - Tracking state and validity
+Refer to image file: 06_Angular-Forms\ngModelProperties.JPG
+Properties can be accessed using template variables
+ex.
+<input
+  type="text"
+  name="userName"
+  #userName="ngModel"
+  required
+  class="form-control"
+  [(ngModel)]="userModel.name"
+/>
+{{userName.pristine}}
+{{userName.touched}}
+{{userName.valid}}
+
+2. Reactive Forms
